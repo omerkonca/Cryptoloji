@@ -3,65 +3,65 @@ import java.util.Scanner;
 public class Main {
 
 	public static void main(String[] args) {
-		Sifreleme();
-		Cozum();
-		}
-	
-	public static void Sifreleme() 
-		{
+		   System.out.println("Sifreleme mi yapacaksÄ±nÄ±z , yoksa sifre mi cÃ¶zÃ¼mleyeceksiniz ?");
+	        System.out.println("EÄŸer sifre olusturacaksanÄ±z 1 sayÄ±sÄ±nÄ± giriniz ,eger sifre cÃ¶zecekseniz 2 sayÄ±sÄ±nÄ± giriniz ");
+	        Scanner giris = new Scanner(System.in);
+	        int yonlendirme = giris.nextInt();
+	        if (yonlendirme == 1) {
+	            Sifreleme();
+	        } else if (yonlendirme == 2) {
+	            tersten();
+	        } else
+	            System.out.println("Gecersiz hane girdiniz !");
+	    }
+	    public static void Sifreleme() {
+	        String cÄ±ktÄ± = "";
+	        String[][] charecters = {{"a", "Br"}, {"b", "Se"}, {"c", "As"}, {"Ã§", "Ge"}, {"d", "Ga"}, {"e", "Zn"}, {"f", "Cu"}, {"g", "Ni"},
+	                {"ÄŸ", "Co"}, {"h", "Fe"}, {"Ä±", "Mn"}, {"i", "Cr"}, {"j", "Mo"}, {"k", "Ti"}, {"l", "Ca"}, {"m", "Ru"}, {"n", "Ar"}, {"o", "Cl"},
+	                {"Ã¶", "Zr"}, {"p", "Xe"}, {"r", "Al"}, {"s", "Mg"}, {"ÅŸ", "Na"}, {"t", "Rb"}, {"u", "Nb"}, {"Ã¼", "Ag"}, {"v", "Te"}, {"y", "Sc"}, {"z", "Be"},
+	                {"0", "Ce"},{"1", "Pr"},{"2", "Nd"},{"3", "Pm"},{"4", "Sm"},{"5", "Eu"},{"6", "Gd"},{"7", "Tb"},{"8", "Dy"},{"9", "Ho"},
+	                {".", "Er"},{",", "Tm"},{"!", "Yb"},{" ", "Kd"}};
 
-		String cýktý="";
-		String[][] charecters= {{"a","Br"},{"b","Se"},{"c","As"},{"ç","Ge"},{"d","Ga"},{"e","Zn"},{"f","Cu"},{"g","Ni"},{"ð","Co"},{"h","Fe"},{"ý","Mn"},{"i","Cr"},
-		{"j","V"},{"k","Ti"},{"l","Ca"},{"m","K"},{"n","Ar"},{"o","Cl"},{"ö","S"},{"p","P"},{"r","Al"},{"s","Mg"},
-		{"þ","Na"},{"t","F"},{"u","O"},{"ü","N"},{"v","C"},{"y","B"},{"z","Be"}};
-		
-		Scanner klv = new Scanner(System.in);
-		System.out.println("lütfen þifrelenmesini istediginiz kelimeyi veya cümleyi girin :");
-		String gýrýlen=klv.nextLine();
-		String cumle=gýrýlen.toLowerCase();
-		String[] parca=cumle.split("");
-		for(int i=0;i<cumle.length();i++)
-		{
-		for(int j=0;j<charecters.length;j++) 
-			{
-		if(parca[i].equals(charecters[j][0]))
-				{
-			parca[i]=charecters[j][1];
-		cýktý=cýktý +parca[i];
-				}
-			}
-		}
-		System.out.println(cýktý);
-		}
-	
-	
-	
-		public static void Cozum() {
-		String cýktý="";
-		String[][] charecters= {{"Br","a"},{"Se","b"},{"As","c"},{"Ge","ç"},{"Ga","d"},{"Zn","e"},{"Cu","f"},{"Ni","g"},{"Co","ð"},{"Fe","h"},{"Mn","ý"},{"Cr","i"},
-		{"V","j"},{"Ti","k"},{"Ca","l"},{"K","m"},{"Ar","n"},{"Cl","o"},{"S","ö"},{"P","p"},{"Al","r"},{"Mg","s"},
-		{"Na","þ"},{"F","t"},{"O","u"},{"N","ü"},{"C","v"},{"B","y"},{"Be","z"}};
-		
-		Scanner klavye = new Scanner(System.in);
-		System.out.println("Þifreli Metni Giriniz :");
-		String gýrýlen=klavye.nextLine();
-		String cumle=gýrýlen;
-		String[] parca=gýrýlen.split("");
-		for(int i = 0; i < cumle.length()-1 ;i++) 
-		   {
-		      for(int j=0;j<charecters.length;j++)
-		         {
-		         if(cumle.substring(i,i+1).equals(charecters[j][0]))
-		           {		      
-		        	 parca[i]=charecters[j][1];
-		        	 cýktý=cýktý + parca[i];
-	               }														
-		         }
-			
-		   }
-		   System.out.println(cýktý);
-									}							
-		   			}
+	        Scanner klv = new Scanner(System.in);
+	        System.out.println("LÃ¼tfen sifrelenmesini istediginiz kelimeyi veya cÃ¼mleyi girin :");
+	        String gÄ±rÄ±len = klv.nextLine();
+	        String cumle = gÄ±rÄ±len.toLowerCase();
+	        String[] parca = cumle.split("");
+	        for (int i = 0; i < cumle.length(); i++) {
+	            for (int j = 0; j < charecters.length; j++) {
+	                if (parca[i].equals(charecters[j][0])) {
+	                    parca[i] = charecters[j][1];
+	                    cÄ±ktÄ± = cÄ±ktÄ± + parca[i];
+	                }
+	            }
+	        }
+	        System.out.println("Åžifreniz : "+cÄ±ktÄ±);
+	    }
+	    public static void tersten() {
+	        String cÄ±ktÄ± = "";
+	        String[][] charecters = {{"Br", "a"}, {"Se", "b"}, {"As", "c"}, {"Ge", "Ã§"}, {"Ga", "d"}, {"Zn", "e"}, {"Cu", "f"}, {"Ni", "g"},
+	                {"Co", "ÄŸ"}, {"Fe", "h"}, {"Mn", "Ä±"}, {"Cr", "i"}, {"Mo", "j"}, {"Ti", "k"}, {"Ca", "l"}, {"Ru", "m"}, {"Ar", "n"}, {"Cl", "o"},
+	                {"Zr", "Ã¶"}, {"Xe", "p"}, {"Al", "r"}, {"Mg", "s"}, {"Na", "ÅŸ"}, {"Rb", "t"}, {"Nb", "u"}, {"Ag", "Ã¼"}, {"Te", "v"}, {"Sc", "y"}, {"Be", "z"},
+	                {"Ce", "0"},{"Pr", "1"},{"Nd", "2"},{"Pm", "3"},{"Sm", "4"},{"Eu", "5"},{"Gd", "6"},{"Tb", "7"},{"Dy", "8"},{"Ho", "9"},
+	                {"Er", "."},{"Tm", ","},{"Yb", "!"},{"Kd", " "}};
+
+	        Scanner klavye = new Scanner(System.in);
+	        System.out.println("Sifreli Metni Giriniz :");
+	        String gÄ±rÄ±len = klavye.nextLine();
+	        String cumle = gÄ±rÄ±len;
+	        String[] parca = gÄ±rÄ±len.split("");
+	        for (int i = 0; i < cumle.length() - 1; i++) {
+	            for (int j = 0; j < charecters.length; j++) {
+	                if (cumle.substring(i, i + 2).equals(charecters[j][0])) {
+	                    parca[i] = charecters[j][1];
+	                    cÄ±ktÄ± = cÄ±ktÄ± + parca[i];
+	                }
+	            }
+	        }
+	        System.out.println("Åžifrenizin Ã‡Ã¶zÃ¼mÃ¼ : "+cÄ±ktÄ±);
+	}
+}
+
 
 
 
